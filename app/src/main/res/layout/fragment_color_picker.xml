@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:minWidth="600dp">
+
+    <TextView
+        android:id="@+id/textViewRed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:padding="6dp"
+        android:text="Red"
+        android:textColor="#FF0000"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <SeekBar
+        android:id="@+id/seekBarRed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:max="255"/>
+
+    <TextView
+        android:id="@+id/textViewGreen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Green"
+        android:padding="6dp"
+        android:textColor="#00FF00"
+        android:textSize="18sp"
+        android:textStyle="bold"/>
+
+    <SeekBar
+        android:id="@+id/seekBarGreen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:max="255"/>
+
+    <TextView
+        android:id="@+id/textViewBlue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Blue"
+        android:padding="6dp"
+        android:textColor="#0000FF"
+        android:textSize="18sp"
+        android:textStyle="bold"/>
+
+    <SeekBar
+        android:id="@+id/seekBarBlue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:max="255" />
+
+    <View
+        android:id="@+id/colorPreview"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="6dp"
+        android:layout_weight="1"
+        android:background="#2196F3" />
+
+    <Button
+        android:id="@+id/buttonColorSelected"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:padding="6dp"
+        android:text="OK" />
+
+</LinearLayout>
