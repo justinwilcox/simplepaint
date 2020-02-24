@@ -118,6 +118,11 @@ public class SimplePaintView extends View {
 
         //Log.i("SimplePaintCanvas", "Touch Event: " + event);
 
+        if(event.getPointerCount() >= 2) {
+            //we handle the touch, but don't actually do anything if there are more than one touch points
+            return true;
+        }
+
         switch(event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 this.currentPath = new Path();
