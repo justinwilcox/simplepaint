@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SimplePaint</string>
+    <string name="menu_hint_text">&lt;-- Slide Out Menu Here</string>
 </resources>

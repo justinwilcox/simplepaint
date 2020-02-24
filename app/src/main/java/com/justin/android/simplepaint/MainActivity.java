@@ -8,6 +8,7 @@ import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -28,11 +29,14 @@ public class MainActivity extends AppCompatActivity implements DrawerLayout.Draw
     private View colorPreviewView;
     private DrawerLayout drawerLayout;
 
+    private TextView hintLabel;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        hintLabel = this.findViewById(R.id.textViewIntro);
         paintView = this.findViewById(R.id.PaintView);
 
         Point displaySize = new Point();
@@ -60,6 +64,9 @@ public class MainActivity extends AppCompatActivity implements DrawerLayout.Draw
         //if user has picked a color before, restore it here
         if(savedInstanceState != null) {
             setPaintColor(savedInstanceState.getInt("color", Color.BLACK));
+            if(savedInstanceState.getBoolean("hide_hint")) {
+                hintLabel.setVisibility(View.GONE);
+            }
         }
         else {
             setPaintColor(Color.BLACK);
@@ -79,6 +86,11 @@ public class MainActivity extends AppCompatActivity implements DrawerLayout.Draw
         if(paintView != null) {
             this.paintView.cachePainting();
             outState.putInt("color", paintView.getPaintColor());
+
+            if(hintLabel.getVisibility() != View.VISIBLE) {
+                outState.putBoolean("hide_hint", true);
+            }
+
         }
         super.onSaveInstanceState(outState);
     }
@@ -112,7 +124,7 @@ public class MainActivity extends AppCompatActivity implements DrawerLayout.Draw
 
     @Override
     public void onDrawerSlide(@NonNull View drawerView, float slideOffset) {
-
+        hintLabel.setVisibility(View.GONE);
     }
 
     @Override
